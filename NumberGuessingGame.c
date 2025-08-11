@@ -18,17 +18,22 @@ int main()
 {
 	srand(time(NULL)); //seeding the pseudo random number generator
 	
+	char tryAgain='Y';
+	
+	while(tryAgain=='Y' || tryAgain=='y')
+{
 	int randomNumber = rand() % 101; //making sure that the random number is below 100(easy for the user to guess the number)
 	
 	int guess;
 	
 	int guessCount=0;
-	
+
 	while(1)				//running a infinite loop till the user guesses the number correctly
 	{
 		printf("Enter Your Guess(0-100): ");
 		
 		scanf("%d",&guess);
+		getchar();        // clearing the input buffer
 
 		guessCount++;
 	
@@ -45,15 +50,15 @@ int main()
 			printf("Congratulations You Won...\n");
 			
 			printf("You took %d guesses\n",guessCount);
-			
-			break; //the loop will end when the user guesses the number correctly
+			break;
 		}
-
+		
 	}
-
+			printf("Do You Want To Play Again?(Y/N): ");
+		
+			scanf("%c",&tryAgain);
+			getchar();                      // clearing the input buffer once again
+}
 	return 0;
 }
-/* You can use a "do while" loop too as the program has to run atleast once,
-	but I used "while" loop just because i am comfortable with it.
-*/
-
+/* you can use a do while loop too */
