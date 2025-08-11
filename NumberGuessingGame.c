@@ -22,11 +22,11 @@ int main()
 	
 	int guess;
 	
-	int guessCount;
+	int guessCount=0;
 	
 	while(1)				//running a infinite loop till the user guesses the number correctly
 	{
-		printf("Enter Your Guess: ");
+		printf("Enter Your Guess(0-100): ");
 		
 		scanf("%d",&guess);
 
@@ -40,7 +40,7 @@ int main()
 		{
 			printf("Try A Lower Number\n");
 		}
-		else if(randomNumber = guess)
+		else if(randomNumber == guess)
 		{
 			printf("Congratulations You Won...\n");
 			
@@ -53,4 +53,7 @@ int main()
 
 	return 0;
 }
+/* You can use a "do while" loop too as the program has to run atleast once,
+	but I used "while" loop just because i am comfortable with it.
+*/
 
